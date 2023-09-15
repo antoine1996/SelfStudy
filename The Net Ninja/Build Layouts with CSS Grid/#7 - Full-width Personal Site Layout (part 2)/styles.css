@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&display=swap");
+
+body {
+    margin: 0;
+    font-family: "Poppins";
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    min-height: 100%;
+}
+.panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    box-sizing: border-box;
+    height: 100vh;
+}
+.panel img {
+    align-self: center;
+    justify-self: center;
+    z-index: -1;
+}
+.panel .text {
+    background: #eeeee7;
+    color: #323230;
+    padding: 30px 60px;
+}
+
+/* welcome panel */
+.panel.welcome {
+    background: #323230;
+    padding: 30px 60px;
+    grid-auto-rows: 1fr;
+}
+.panel.welcome nav a {
+    color: #a8a8a8;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.panel.welcome p {
+    color: #a8a8a8;
+    max-width: 540px;
+    line-height: 2em;
+}
+.panel.welcome h1 {
+    color: #eeeee7;
+    font-size: 3em;
+}
+.panel.welcome footer {
+    align-self: end;
+}
+
+/* about panel */
+.panel.about {
+    grid-template-rows: 3fr 1fr;
+    overflow: hidden;
+}
+
+.panel.about img {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* photos panel */
+.panel.photos {
+    grid-template-rows: 1fr 3fr;
+    overflow: hidden;
+}
+.panel.photos img {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+@media screen and (max-width: 1400px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+    .panel.photos {
+        grid-column: span 2;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    .panel.welcome {
+        height: 500px;
+    }
+    .panel.about {
+        height: 400px;
+        grid-row: 2;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .panel.photos {
+        height: 400px;
+    }
+    .panel img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .panel.about, .panel.photos {
+        grid-template-columns: 1fr;
+        grid-column: span 1;
+        grid-template-rows: 1fr 1fr;
+        border-bottom: 1px solid #dcdcd0;
+    }
+    .panel.welcome {
+        height: 700px;
+    }
+    .panel.about, .panel.photos {
+        height: 600px;
+    }
+}
